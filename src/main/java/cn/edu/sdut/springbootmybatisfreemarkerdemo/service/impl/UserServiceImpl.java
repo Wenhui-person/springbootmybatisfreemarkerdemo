@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<Tbuser> queryUsers(Tbuser tbuser) {
-        return null;
+        return this.userMapper.queryUsers(tbuser);
     }
 
     @Override
@@ -32,21 +32,21 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Tbuser queryUserByUsername(String username) {
-        return null;
+        return this.userMapper.queryUserByUsername(username);
     }
 
     @Override
     public int addUser(Tbuser tbuser) {
-        return 0;
+        return this.userMapper.addUser(tbuser);
     }
 
     @Override
     public int updateUser(Tbuser tbuser) {
-        return 0;
+        return this.userMapper.updateUser(tbuser);
     }
 
     @Override
     public int deleteUser(int userid) {
-        return 0;
+        return this.userMapper.deleteUser(userid);
     }
 }
