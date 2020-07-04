@@ -1,0 +1,28 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: springbootmybatisfreemarkerdemo
+  freemarker:
+    suffix: .ftlh
+    settings:
+      number_format: 0.##
+    cache: false
+    charset: UTF-8
+    content-type: text/html;charset=utf-8
+  datasource:
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sdut?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password:
+mybatis:
+  mapper-locations: mapper/*.xml
+  type-aliases-package: cn.edu.sdut.springbootmybatisfreemarkerdemo.entity
+
+logging:
+  level:
+    cn:
+      edu:
+       sdut:
+         springbootmybatisfreemarkerdemo:
+          mapper: debug
