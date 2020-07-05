@@ -7,6 +7,33 @@
 <body>
 
 <form action="toAddUser" method="post">
+    <table class="querytable">
+        <tr>
+            <th class="textright">
+                用户名：
+            </th>
+            <td class="textleft">
+                <input type="text" name="username">
+            </td>
+            <th class="textright">
+                用户角色：
+            </th>
+            <td class="textleft">
+                <select name="userroles" id="">
+                    <option value="00">--请选择--</option>
+                    <option value="01">学生</option>
+                    <option value="02">老师</option>
+                    <option value="03">校长</option>
+                    <option value="04">管理员</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" align="center">
+                <input type="button" value="查询用户信息">
+            </td>
+        </tr>
+    </table>
     <table id="ajaxtable">
         <tr>
             <th>用户编号</th>
@@ -33,8 +60,8 @@
                 <td>${tbuser.regtime?date}</td>
                 <td>
                     <a href="detailUser?userid=${tbuser.userid}">查看</a>
-                    <a href="toUpdateUser">修改</a>
-                    <a href="deleteUser?userid=${tbuser.userid}" onclick="return confirm('确认删除该用户吗？')">删除</a>
+                    <a href="toUpdateUser?userid=${tbuser.userid}">修改</a>
+                    <a href="doDeleteUser?userid=${tbuser.userid}" onclick="return confirm('确认删除该用户吗？')">删除</a>
                 </td>
             </tr>
         </#list>
@@ -55,5 +82,12 @@
 <link rel="stylesheet" href="/css/editTablestyles.css">
 <script type="text/javascript" src="/js/jquery.min.js"></script>
 <script type="text/javascript" src="/js/listTable.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $("input[type='button']").click(function () {
+            $("form").attr("action","queryUsers").submit();
+        });
+    });
+</script>
 </body>
 </html>

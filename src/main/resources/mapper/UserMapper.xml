@@ -22,7 +22,7 @@
             <if test="username!=null and username!=''">
                 and username like concat("%",#{username},"%")
             </if>
-            <if test="userroles!=null and userroles!=''">
+            <if test="userroles!=null and userroles!='00'">
                 and userroles=#{userroles}
             </if>
         </where>

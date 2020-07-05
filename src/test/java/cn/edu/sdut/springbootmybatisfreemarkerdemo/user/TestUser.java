@@ -25,13 +25,6 @@ public class TestUser extends SpringbootmybatisfreemarkerdemoApplicationTests {
         Tbuser login=this.userService.login(tbuser);
         System.out.println("login = " + login);
     }
-    private void print(int row){
-        if(row>0){
-            System.out.println("操作成功");
-        }else{
-            System.out.println("操作失败");
-        }
-    }
     @Test
     public void testAddUser(){
         Tbuser tbuser=new Tbuser(0,"hekemin","1234","01","敬神",null);
@@ -39,7 +32,7 @@ public class TestUser extends SpringbootmybatisfreemarkerdemoApplicationTests {
     }
     @Test
     public void testUpdateUser(){
-        Tbuser tbuser=new Tbuser(20,"hekemin","12345","01","jingshen",null);
+        Tbuser tbuser=new Tbuser(19,"heemin","12345","01","jingshen",null);
         this.print(this.userService.updateUser(tbuser));
     }
     @Test
